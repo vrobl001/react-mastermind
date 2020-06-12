@@ -2,24 +2,31 @@ version: '3.8'
 
 services:
   node:
-    image: react-mastermind:latest
+    container_name: react-mastermind
+    restart: always
+    build: .
+    depends_on:
+      - mongo
     ports:
       - 3000:3000
     environment:
-      DATABASE_URL: mongo:27017
+      DATABASE_URL: mongodb://mongo/Highscores?retryWrites=true&w=majority
 
   mongo:
+    container_name: mongo
     image: mongo
     restart: always
     ports:
-      - 27017
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
+      - 27017:27017
+    # environment:
+    #   MONGO_INITDB_ROOT_USERNAME: root
+    #   MONGO_INITDB_ROOT_PASSWORD: example
 
   mongo-express:
     image: mongo-express
     restart: always
+    depends_on:
+      - mongo
     ports:
       - 8081:8081
     environment:
