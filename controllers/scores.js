@@ -15,8 +15,12 @@ async function create(req, res) {
 }
 
 async function highScores(req, res) {
-  const scores = await Score.find({})
-    .sort({ numGuesses: 1, seconds: 1 })
-    .limit(req.query.limit || 20);
-  res.json(scores);
+  try {
+    const scores = await Score.find({})
+      .sort({ numGuesses: 1, seconds: 1 })
+      .limit(req.query.limit || 20);
+    res.json(scores);
+  } catch (err) {
+    res.json({ err });
+  }
 }
