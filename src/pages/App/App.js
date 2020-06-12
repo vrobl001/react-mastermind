@@ -13,10 +13,7 @@ const colors = {
 };
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = { ...this.getInitialState(), difficulty: 'Easy', scores: [] };
-  }
+  state = { ...this.getInitialState(), difficulty: 'Easy', scores: [] };
 
   getInitialState() {
     return {
