@@ -3,8 +3,8 @@ version: '3.8'
 services:
   node:
     container_name: react-mastermind
-    restart: always
     build: .
+    restart: always
     depends_on:
       - mongo
     ports:
@@ -18,9 +18,6 @@ services:
     restart: always
     ports:
       - 27017:27017
-    # environment:
-    #   MONGO_INITDB_ROOT_USERNAME: root
-    #   MONGO_INITDB_ROOT_PASSWORD: example
 
   mongo-express:
     image: mongo-express
