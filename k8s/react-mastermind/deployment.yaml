@@ -13,11 +13,17 @@ spec:
         component: web
     spec:
       containers:
-        - name: react-mastermind
-          image: vrobl001/react-mastermind
-          resources:
-            limits:
-              memory: "128Mi"
-              cpu: "500m"
-          ports:
-            - containerPort: 3000
+      - name: react-mastermind
+        image: vrobl001/react-mastermind:test2
+        resources:
+        ports:
+          - containerPort: 3000
+        env:
+        - name: HOST
+          value: 127.0.0.1
+        - name: DANGEROUSLY_DISABLE_HOST_CHECK
+          value: "true"
+        #   - name: MONGO_HOST
+        #     value: mongo-service
+        #   - name: MONGO_PORT
+        #     value: "27017"

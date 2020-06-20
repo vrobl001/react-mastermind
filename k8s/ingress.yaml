@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-service
+spec:
+  tls:
+  - hosts:
+      - react-mastermind.localhost
+  rules:
+  - host: react-mastermind.localhost
+    http:
+      paths:
+      - backend:
+          serviceName: react-mastermind-service
+          servicePort: 3000
