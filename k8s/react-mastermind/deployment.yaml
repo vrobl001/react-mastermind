@@ -14,16 +14,12 @@ spec:
     spec:
       containers:
       - name: react-mastermind
-        image: vrobl001/react-mastermind:test2
+        image: vrobl001/react-mastermind:latest
         resources:
         ports:
           - containerPort: 3000
         env:
-        - name: HOST
-          value: 127.0.0.1
         - name: DANGEROUSLY_DISABLE_HOST_CHECK
           value: "true"
-        #   - name: MONGO_HOST
-        #     value: mongo-service
-        #   - name: MONGO_PORT
-        #     value: "27017"
+        - name: DATABASE_URL
+          value: mongo-service
