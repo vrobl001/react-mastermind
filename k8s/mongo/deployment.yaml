@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: mongo-deployment
 spec:
+  replicas: 1
   selector:
     matchLabels:
       component: mongo
@@ -12,19 +13,16 @@ spec:
         component: mongo
     spec:
       volumes:
-        - name: mongo-storage
-          persistentVolumeClaim:
-              claimName: mongo-pvc
+      - name: mongo-storage
+        persistentVolumeClaim:
+            claimName: mongo-pvc
       containers:
-        - name: mongo-deployment
-          image: mongo
-          resources:
-            limits:
-              memory: "128Mi"
-              cpu: "500m"
-          ports:
-            - containerPort: 27017
-          volumeMounts:
-            - name: mongo-storage
-              mountPath: /var/lib/mongodb/data
-              subPath: mongo
+      - name: mongo
+        image: mongo
+        resources:
+        ports:
+        - containerPort: 27017
+        volumeMounts:
+        - name: mongo-storage
+          mountPath: /data/db
+          subPath: mongo
