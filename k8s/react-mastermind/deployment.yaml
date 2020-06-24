@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: react-mastermind
-        image: vrobl001/react-mastermind:latest
+        image: vrobl001/react-mastermind:dev
         resources:
         ports:
           - containerPort: 3000
@@ -22,4 +22,4 @@ spec:
         - name: DANGEROUSLY_DISABLE_HOST_CHECK
           value: "true"
         - name: DATABASE_URL
-          value: mongo-service
+          value: mongodb://mongo-service/Highscores?retryWrites=true&w=majority
