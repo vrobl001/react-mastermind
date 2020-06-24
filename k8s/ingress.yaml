@@ -5,7 +5,7 @@ metadata:
 spec:
   tls:
   - hosts:
-      - react-mastermind.localhost
+    - react-mastermind.localhost
   rules:
   - host: react-mastermind.localhost
     http:
