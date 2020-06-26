@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: react-mastermind
-        image: vrobl001/react-mastermind:dev
+        image: vrobl001/react-mastermind:latest
         resources:
         ports:
           - containerPort: 3000
