@@ -3,7 +3,7 @@ version: '3.8'
 services:
   node:
     container_name: react-mastermind
-    image: vrobl001/react-mastermind:dev
+    image: vrobl001/react-mastermind:latest
     restart: always
     depends_on:
       - mongo
