@@ -1,10 +1,10 @@
 # Introduction
 
-    MERN stack app that recreates the classic game Mastermind!
+A MERN stack app that recreates the classic game Mastermind!
 
-    Users will have to try and guess the secret color combination by using the hints given after each guess. Solid circle means that a peg is in the correct location. A bold outline of a circle means that the correct color was guessed, but in the wrong location. A blank circle means that the color is not part of the combination.
+Users will have to try and guess the secret color combination by using the hints given after each guess. Solid circle means that a peg is in the correct location. A bold outline of a circle means that the correct color was guessed, but in the wrong location. A blank circle means that the color is not part of the combination.
 
-    Top 20 scores saved to a Mongo database.
+Top 20 scores saved to a Mongo database.
 
 ## Technologies Used
 
